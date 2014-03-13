@@ -19,6 +19,9 @@
     # デフォルトで/tmp/preview.htmlに出力
     :OreMarkdown
 
+    # HTMLに<meta http-equiv="refresh" content="1" />をつける
+    :OreMarkdown "reload"
+
 ## 設定
 
     # HTML出力先
@@ -28,4 +31,4 @@
     autocmd BufWritePost *.md silent! OreMarkdown
 
     # imadesyo.vimと連携
-    autocmd Filetype markdown let b:imadesyo_command = ore_markdown#cmd()
+    autocmd Filetype markdown let b:imadesyo_command = "OreMarkdown"

@@ -1,1 +1,1 @@
-command! OreMarkdown call ore_markdown#conv()
+command! -nargs=? OreMarkdown call ore_markdown#conv(<args>)

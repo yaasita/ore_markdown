@@ -5,6 +5,7 @@ Dir.chdir File.expand_path('../',__FILE__)
 puts <<"HEADER"
 <html>
   <head>
+  #{'<meta http-equiv="refresh" content="1" />' if ARGV[1] == "reload"}
     <style>
       #{File.read("bootstrap.css")}
       #{File.read("github.css")}
@@ -13,7 +14,7 @@ puts <<"HEADER"
   <body>
     <div class="container">
 HEADER
-STDOUT.write(GitHub::Markdown.to_html(ARGF.read, :gfm))
+puts (GitHub::Markdown.to_html(File.read(ARGV[0]), :gfm))
 puts <<"FOOTER"
     </div>
   </body>
