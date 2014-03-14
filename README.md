@@ -20,7 +20,7 @@
     :OreMarkdown
 
     # HTMLに<meta http-equiv="refresh" content="3" />をつける
-    :OreMarkdown "reload"
+    :OreMarkdown reload
 
 ## 設定
 
