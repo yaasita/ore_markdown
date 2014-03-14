@@ -19,7 +19,7 @@
     # デフォルトで/tmp/preview.htmlに出力
     :OreMarkdown
 
-    # HTMLに<meta http-equiv="refresh" content="1" />をつける
+    # HTMLに<meta http-equiv="refresh" content="3" />をつける
     :OreMarkdown "reload"
 
 ## 設定

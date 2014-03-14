@@ -5,7 +5,7 @@ Dir.chdir File.expand_path('../',__FILE__)
 puts <<"HEADER"
 <html>
   <head>
-  #{'<meta http-equiv="refresh" content="1" />' if ARGV[1] == "reload"}
+  #{'<meta http-equiv="refresh" content="3" />' if ARGV[1] == "reload"}
     <style>
       #{File.read("bootstrap.css")}
       #{File.read("github.css")}
