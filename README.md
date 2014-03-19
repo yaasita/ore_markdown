@@ -24,8 +24,14 @@
     # HTMLに<meta http-equiv="refresh" content="3" />をつける
     :OreMarkdown reload
 
+    # HTMLに<meta content="text/html" charset="UTF-8">をつける
+    :OreMarkdown utf8
+
     # バックグラウンド実行
     :OreMarkdown bg
+
+    # 引数は複数指定可 順不同
+    :OreMarkdown bg utf8 reload
 
 ## 設定
 

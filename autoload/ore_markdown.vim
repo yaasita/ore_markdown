@@ -6,9 +6,13 @@ function! ore_markdown#conv(...)
 
     let args=""
     let bg=""
-    for a in a:000
+    for a in split(a:1)
+        echo a
         if a == "reload"
-            let args = args . " reload"
+            let args = args . " --reload"
+        endif
+        if a == "utf8"
+            let args = args . " --utf8"
         endif
         if a == "bg" 
             let bg = " &"
