@@ -19,5 +19,5 @@ function! ore_markdown#conv(...)
         endif
     endfor
 
-    execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file . bg
+    execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file ." 2>/dev/null" . bg
 endfunction
