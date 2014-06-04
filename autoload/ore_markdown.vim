@@ -11,13 +11,10 @@ function! ore_markdown#conv(...)
         if a == "reload"
             let args = args . " --reload"
         endif
-        if a == "utf8"
-            let args = args . " --utf8"
-        endif
         if a == "bg" 
             let bg = " &"
         endif
     endfor
 
-    execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file ." 2>/dev/null" . bg
+    execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb --charset " . &fenc . " " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file ." 2>/dev/null" . bg
 endfunction

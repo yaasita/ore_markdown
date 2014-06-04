@@ -5,14 +5,25 @@ require 'optparse'
 opt = OptionParser.new
 @option = {}
 opt.on('--reload') {|v| @option[:reload]=v }
-opt.on('--utf8') {|v| @option[:utf8]=v }
+opt.on('--charset VAL') {|v| @option[:charset]=v}
 opt.permute!(ARGV)
+
+case @option[:charset]
+when "utf-8"
+  charset='<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
+when "sjis","cp932"
+  charset='<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">'
+when "euc-jp"
+  charset='<meta http-equiv="Content-Type" content="text/html; charset=euc-jp">'
+when "iso-2022-jp"
+  charset='<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">'
+end
 
 Dir.chdir File.expand_path('../',__FILE__)
 puts <<"HEADER"
 <html>
   <head>
-  #{'<meta content="text/html" charset="UTF-8">' if @option[:utf8]}
+  #{charset}
   #{'<meta http-equiv="refresh" content="3" />' if @option[:reload]}
     <style>
       #{File.read("bootstrap.css")}
