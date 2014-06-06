@@ -1,3 +1,3 @@
 @echo off
-cd C:\Users\yamasita\.vim\bundle\ore_markdown\bin
+cd /d %~dp0
 bundle exec ruby conv.rb %*
