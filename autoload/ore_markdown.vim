@@ -20,7 +20,7 @@ function! ore_markdown#conv(...)
         endif
     endfor
 	if has('win32')
-		execute '!' . s:base_dir . '\..\bin\conv.bat --charset ' . &fenc . ' ' . args . ' ' . expand('%:p') . ' > ' . g:ore_markdown_output_file
+		execute '!""' . s:base_dir . '\..\bin\conv.bat" --charset ' . &fenc . ' ' . args . ' "' . expand('%:p') . '" > "' . g:ore_markdown_output_file . '"'
 	else
 		execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb --charset " . &fenc . " " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file ." 2>/dev/null" . bg
 	end
