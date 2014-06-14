@@ -10,6 +10,7 @@ function! ore_markdown#conv(...)
 
     let args=""
     let bg=""
+    let space=' '
     for a in split(a:1)
         echo a
         if a == "reload"
@@ -22,6 +23,21 @@ function! ore_markdown#conv(...)
 	if has('win32')
 		execute '!""' . s:base_dir . '\..\bin\conv.bat" --charset ' . &fenc . ' ' . args . ' "' . expand('%:p') . '" > "' . g:ore_markdown_output_file . '"'
 	else
-		execute "!cd " . s:base_dir . "/../bin/ && bundle exec ./conv.rb --charset " . &fenc . " " . expand('%:p') . " " . args . " > " . g:ore_markdown_output_file ." 2>/dev/null" . bg
+        " ex) 
+        " !cd '/home/yamasita/.vim/bundle/ore_markdown/autoload/../bin/ 
+        " &&
+        " bundle exec ./conv.rb --charset utf-8 '
+        " '/tmp/test.md'
+        " --reload
+        " > '/tmp/preview.html'
+        " 2>/dev/null &
+		execute 
+                    \ '!cd ' . shellescape(s:base_dir . '/../bin/',1) . space .
+                    \ "&&" . space .
+                    \ "bundle exec ./conv.rb --charset " . &fenc . space .
+                    \ shellescape(expand('%:p'),1) . space .
+                    \ args . space .
+                    \ "> " . shellescape(g:ore_markdown_output_file,1) . space .
+                    \ "2>/dev/null" . bg
 	end
 endfunction
