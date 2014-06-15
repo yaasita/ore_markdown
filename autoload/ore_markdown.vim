@@ -11,6 +11,7 @@ function! ore_markdown#conv(...)
     let args=""
     let bg=""
     let space=' '
+    let charset=&fenc==""?&enc:&fenc
     for a in split(a:1)
         echo a
         if a == "reload"
@@ -34,7 +35,7 @@ function! ore_markdown#conv(...)
 		execute 
                     \ '!cd ' . shellescape(s:base_dir . '/../bin/',1) . space .
                     \ "&&" . space .
-                    \ "bundle exec ./conv.rb --charset " . &fenc . space .
+                    \ "bundle exec ./conv.rb --charset " . charset . space .
                     \ shellescape(expand('%:p'),1) . space .
                     \ args . space .
                     \ "> " . shellescape(g:ore_markdown_output_file,1) . space .
