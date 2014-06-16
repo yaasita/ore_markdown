@@ -22,7 +22,24 @@ function! ore_markdown#conv(...)
         endif
     endfor
 	if has('win32')
-		execute '!""' . s:base_dir . '\..\bin\conv.bat" --charset ' . &fenc . ' ' . args . ' "' . expand('%:p') . '" > "' . g:ore_markdown_output_file . '"'
+		" ex)
+		" !"
+		" "C:\Users\yamasita\.vim\bundle\ore_markdown\autoload\..\bin\conv.bat" --charset cp932
+		" --reload
+		"  "C:\temp\hoge.md"
+		"  > "C:\Users\yamasita\Desktop\preview.html"
+		let save_shellslash = &shellslash
+		set noshellslash
+		execute
+					\ '!"' .
+					\ shellescape(s:base_dir . '\..\bin\conv.bat') . ' --charset ' . charset . space .
+					\ args . space .
+					\ shellescape(expand('%:p')) . space .
+					\ '> ' . shellescape(g:ore_markdown_output_file) .
+					\ '"'
+		if save_shellslash
+			set shellslash
+		endif
 	else
         " ex) 
         " !cd '/home/yamasita/.vim/bundle/ore_markdown/autoload/../bin/ 
