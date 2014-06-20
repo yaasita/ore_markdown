@@ -12,6 +12,8 @@ function! ore_markdown#conv(...)
     let bg=""
     let space=' '
     let charset=&fenc==""?&enc:&fenc
+    let debug=0
+    let stderr="2>/dev/null"
     for a in split(a:1)
         echo a
         if a == "reload"
@@ -19,6 +21,10 @@ function! ore_markdown#conv(...)
         endif
         if a == "bg"
             let bg = " &"
+        endif
+        if a == "debug"
+            let debug=1
+            let stderr=""
         endif
     endfor
 	if has('win32')
@@ -49,6 +55,17 @@ function! ore_markdown#conv(...)
         " --reload
         " > '/tmp/preview.html'
         " 2>/dev/null &
+        if debug
+            echo 
+                        \ '!cd ' . shellescape(s:base_dir . '/../bin/',1) . space .
+                        \ "&&" . space .
+                        \ "bundle exec ./conv.rb --charset " . charset . space .
+                        \ shellescape(expand('%:p'),1) . space .
+                        \ args . space .
+                        \ "> " . shellescape(g:ore_markdown_output_file,1) . space .
+                        \ stderr . bg
+            let l:input = input("何かキーを押してください")
+        endif
 		execute 
                     \ '!cd ' . shellescape(s:base_dir . '/../bin/',1) . space .
                     \ "&&" . space .
@@ -56,6 +73,6 @@ function! ore_markdown#conv(...)
                     \ shellescape(expand('%:p'),1) . space .
                     \ args . space .
                     \ "> " . shellescape(g:ore_markdown_output_file,1) . space .
-                    \ "2>/dev/null" . bg
+                    \ stderr . bg
 	end
 endfunction
