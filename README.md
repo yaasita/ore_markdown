@@ -11,7 +11,8 @@
 
     NeoBundle 'yaasita/ore_markdown', {
           \ 'build' : {
-          \     'windows' : 'bundle install --gemfile .\bin\Gemfile', 
+          \     'windows' : 'bundle install --gemfile .\bin\Gemfile',
+          \     'mac' : 'bundle install --gemfile ./bin/Gemfile',
           \     'unix' : 'bundle install --gemfile ./bin/Gemfile'
           \    },
           \ }
