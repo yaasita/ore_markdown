@@ -40,6 +40,9 @@
     # HTML出力先(Windows)
     let g:ore_markdown_output_file = 'C:\temp\preview.html'
 
+    # 折りたたみ有効
+    let g:ore_markdown_fold = 1
+
     # 書き込み時に自動変換(非同期)
     autocmd BufWritePost *.md silent! OreMarkdown bg
 

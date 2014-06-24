@@ -76,3 +76,22 @@ function! ore_markdown#conv(...)
                     \ stderr . bg
 	end
 endfunction
+
+function! ore_markdown#fold()
+    if v:lnum == 1
+        let s:level = 0
+    endif
+    let l:head = s:head(v:lnum)
+    if l:head
+        let s:level = l:head
+        return ">" . l:head
+    elseif getline(v:lnum + 2) =~ '^#' && s:head(v:lnum + 2) < s:level
+        let s:level = s:head(v:lnum + 2)
+        return "<" . (s:level +  1)
+    endif
+    return "=" 
+endfunction
+ 
+function! s:head(lnum)
+    return strlen(matchstr(getline(a:lnum), '^#*'))
+endfunction
