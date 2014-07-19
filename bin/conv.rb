@@ -6,6 +6,7 @@ opt = OptionParser.new
 @option = {}
 opt.on('--reload') {|v| @option[:reload]=v }
 opt.on('--charset VAL') {|v| @option[:charset]=v}
+opt.on('--presentation') {|v| @option[:presentation]=v }
 opt.permute!(ARGV)
 
 case @option[:charset]
@@ -26,16 +27,33 @@ puts <<"HEADER"
   #{charset}
   #{'<meta http-equiv="refresh" content="3" />' if @option[:reload]}
     <style>
-      #{File.read("bootstrap.css")}
-      #{File.read("github.css")}
+      #{File.read("css/bootstrap.css")}
+      #{File.read("css/github.css")}
     </style>
   </head>
   <body>
-    <div class="container">
 HEADER
-puts (GitHub::Markdown.to_html(File.read(ARGV.pop), :gfm))
+if @option[:presentation]
+  puts <<"BODY"
+   <textarea id="source">
+class: center, middle
+#{(File.read(ARGV.pop))}
+   </textarea>
+   <script>
+   #{File.read("remark-0.6.5/single.js")}
+   </script>
+   <script type="text/javascript">
+     var slideshow = remark.create();
+   </script>
+BODY
+else
+  puts <<"BODY"
+  <div class="container">
+    #{(GitHub::Markdown.to_html(File.read(ARGV.pop), :gfm))}
+  </div>
+BODY
+end
 puts <<"FOOTER"
-    </div>
   </body>
 </html>
 FOOTER

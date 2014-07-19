@@ -29,6 +29,11 @@
     # バックグラウンド実行(Windowsは効果なし)
     :OreMarkdown bg
 
+    # プレゼンテーション用のスライドにする
+    # 出力イメージ
+    # https://github.com/yaasita/ore_markdown/wiki/presentation
+    :OreMarkdown presentation
+
     # 引数は複数指定可 順不同
     :OreMarkdown bg reload
 

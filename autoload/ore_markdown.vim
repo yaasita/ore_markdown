@@ -19,6 +19,9 @@ function! ore_markdown#conv(...)
         if a == "reload"
             let args = args . " --reload"
         endif
+        if a == "presentation"
+            let args = args . " --presentation"
+        endif
         if a == "bg"
             let bg = " &"
         endif
