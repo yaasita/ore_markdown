@@ -7,35 +7,46 @@
 
 ## インストール
 
-要ruby,bundler
+### 1. 適当なパッケージマネージャーでインストール
 
-    NeoBundle 'yaasita/ore_markdown', {
-          \ 'build' : {
-          \     'windows' : 'bundle install --gemfile .\bin\Gemfile',
-          \     'mac' : 'bundle install --gemfile ./bin/Gemfile',
-          \     'unix' : 'bundle install --gemfile ./bin/Gemfile'
-          \    },
-          \ }
+    # vim-plugだとこんな感じ
+    Plug 'yaasita/ore_markdown'
+
+### 2. インストールしたディレクトリ直下にバイナリを置く
+
+変換に[ore_markdown-go](https://github.com/yaasita/ore_markdown-go)が必要なので
+バイナリを`ore_markdown-go`という名前で(windowsは`ore_markdown-go.exe`)置いて下さい
+
+* Linux
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-386-ore_markdown-go
+* FreeBSD
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/freebsd-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/freebsd-amd64-ore_markdown-go
+* Windows
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/windows-amd64-ore_markdown-go.exe
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/windows-386-ore_markdown-go.exe
+* macOS
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/darwin-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/darwin-386-ore_markdown-go
+
+例）
+
+    #vim-plug + Linux 64bitの場合
+    cd ~/.vim/plugged/ore_markdown/
+    curl -Lo ore_markdown-go https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-amd64-ore_markdown-go
+    chmod +x ore_markdown-go
 
 ## 使い方
     
     # 以下のコマンドで実行
-    # デフォルトで/tmp/preview.htmlに出力(WindowsはDesktop)
+    # デフォルトでカレントディレクトリのpreview.htmlに出力
     :OreMarkdown
-
-    # HTMLに<meta http-equiv="refresh" content="3" />をつける
-    :OreMarkdown reload
-
-    # バックグラウンド実行(Windowsは効果なし)
-    :OreMarkdown bg
 
     # プレゼンテーション用のスライドにする
     # 出力イメージ
     # https://github.com/yaasita/ore_markdown/wiki/presentation
     :OreMarkdown presentation
-
-    # 引数は複数指定可 順不同
-    :OreMarkdown bg reload
 
 ## 設定
 
@@ -48,8 +59,8 @@
     # 折りたたみ有効
     let g:ore_markdown_fold = 1
 
-    # 書き込み時に自動変換(非同期)
-    autocmd BufWritePost *.md silent! OreMarkdown bg
+    # 書き込み時に自動変換
+    autocmd BufWritePost *.md silent! OreMarkdown
 
     # imadesyo.vimと連携
     autocmd Filetype markdown let b:imadesyo_command = "OreMarkdown"
