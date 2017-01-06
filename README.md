@@ -18,23 +18,23 @@
 バイナリを`ore_markdown-go`という名前で(windowsは`ore_markdown-go.exe`)置いて下さい
 
 * Linux
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/linux-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/linux-386-ore_markdown-go
 * FreeBSD
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/freebsd-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/freebsd-amd64-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/freebsd-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/freebsd-amd64-ore_markdown-go
 * Windows
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/windows-amd64-ore_markdown-go.exe
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/windows-386-ore_markdown-go.exe
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/windows-amd64-ore_markdown-go.exe
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/windows-386-ore_markdown-go.exe
 * macOS
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/darwin-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/darwin-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/darwin-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/darwin-386-ore_markdown-go
 
 例）
 
     #vim-plug + Linux 64bitの場合
     cd ~/.vim/plugged/ore_markdown/
-    curl -Lo ore_markdown-go https://github.com/yaasita/ore_markdown-go/releases/download/v0.2/linux-amd64-ore_markdown-go
+    curl -Lo ore_markdown-go https://github.com/yaasita/ore_markdown-go/releases/download/v0.3/linux-amd64-ore_markdown-go
     chmod +x ore_markdown-go
 
 ## 使い方
