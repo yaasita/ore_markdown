@@ -48,8 +48,10 @@
     # https://github.com/yaasita/ore_markdown/wiki/presentation
     :OreMarkdown presentation
 
-    # 画像はmarkdownのファイルからたどれる場所にあれば
+    # 画像はmarkdownのファイルからたどれる場所にあれば(markdownからの相対パス)
     # base64にしてHTML内に埋め込みます
+    # 例)
+    # ![pic](hoge.gif)
 
 ## 設定
 
