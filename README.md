@@ -18,17 +18,17 @@
 バイナリを`ore_markdown-go`という名前で(windowsは`ore_markdown-go.exe`)置いて下さい
 
 * Linux
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/linux-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/linux-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/linux-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/linux-386-ore_markdown-go
 * FreeBSD
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/freebsd-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/freebsd-amd64-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/freebsd-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/freebsd-amd64-ore_markdown-go
 * Windows
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/windows-amd64-ore_markdown-go.exe
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/windows-386-ore_markdown-go.exe
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/windows-amd64-ore_markdown-go.exe
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/windows-386-ore_markdown-go.exe
 * macOS
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/darwin-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/darwin-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/darwin-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/darwin-386-ore_markdown-go
 
 例）
 
@@ -47,6 +47,9 @@
     # 出力イメージ
     # https://github.com/yaasita/ore_markdown/wiki/presentation
     :OreMarkdown presentation
+
+    # 画像はmarkdownのファイルからたどれる場所にあれば
+    # base64にしてHTML内に埋め込みます
 
 ## 設定
 
