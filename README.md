@@ -18,17 +18,17 @@
 バイナリを`ore_markdown-go`という名前で(windowsは`ore_markdown-go.exe`)置いて下さい
 
 * Linux
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/linux-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/linux-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/linux-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/linux-386-ore_markdown-go
 * FreeBSD
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/freebsd-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/freebsd-amd64-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/freebsd-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/freebsd-amd64-ore_markdown-go
 * Windows
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/windows-amd64-ore_markdown-go.exe
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/windows-386-ore_markdown-go.exe
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/windows-amd64-ore_markdown-go.exe
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/windows-386-ore_markdown-go.exe
 * macOS
-    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/darwin-amd64-ore_markdown-go
-    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.5/darwin-386-ore_markdown-go
+    * 64bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/darwin-amd64-ore_markdown-go
+    * 32bit: https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/darwin-386-ore_markdown-go
 
 例）
 
