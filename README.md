@@ -34,7 +34,7 @@
 
     #vim-plug + Linux 64bitの場合
     cd ~/.vim/plugged/ore_markdown/
-    curl -Lo ore_markdown-go https://github.com/yaasita/ore_markdown-go/releases/download/v0.4/linux-amd64-ore_markdown-go
+    curl -Lo ore_markdown-go https://github.com/yaasita/ore_markdown-go/releases/download/v0.6/linux-amd64-ore_markdown-go
     chmod +x ore_markdown-go
 
 ## 使い方
